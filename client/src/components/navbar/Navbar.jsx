@@ -27,7 +27,7 @@ const Navbar = () => {
             <li>Home</li>
           </Link>
           {!isHome && (
-            <Link to="/rentPage" className="link" onClick={showNavbar}>
+            <Link to="/rentSection" className="link" onClick={showNavbar}>
               <li>Rent a Home</li>
             </Link>
           )}

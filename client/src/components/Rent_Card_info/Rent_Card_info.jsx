@@ -1,5 +1,6 @@
 import Slider from "../Slider/Silder";
 import "./Rent_Card_info.css";
+import Carousel from "react-elastic-carousel";
 // import PropTypes from "prop-types";
 import { MdOutlineMapsHomeWork } from "react-icons/md";
 import { useContext } from "react";
@@ -7,6 +8,13 @@ import UserContext from "../../api/contextApi";
 
 const Rent_Card_info = () => {
   const { theme } = useContext(UserContext);
+
+  const breakPoints = [
+    { width: 550, itemsToShow: 1 },
+    { width: 768, itemsToShow: 2 },
+    { width: 1200, itemsToShow: 3 },
+  ];
+
   return (
     <div className="rent_card_info" data-theme={theme}>
       {/* gallery map section */}
@@ -24,6 +32,7 @@ const Rent_Card_info = () => {
         </div>
       </div>
       {/* specification - Contact Seller Section */}
+
       <div className="spec-seller-con">
         <div className="specSection">
           <div className="spec-row row1">
@@ -108,6 +117,76 @@ const Rent_Card_info = () => {
 
         {/* seller info */}
         <div className="sellerSection"></div>
+      </div>
+
+      {/* review section */}
+      <div className="carousel-container">
+        <h2 className="mapHead">Reviews We Get</h2>
+        <Carousel breakPoints={breakPoints}>
+          <div className="reviews-card">
+            <div className="review-img"></div>
+            <div className="review-name">Virat Dey</div>
+            <div className="review-para">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque cum
+              laudantium ab illo unde deserunt voluptates dolore quia
+              consectetur et?
+            </div>
+          </div>
+          <div className="reviews-card">
+            <div className="review-img"></div>
+            <div className="review-name">Virat Dey</div>
+            <div className="review-para">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque cum
+              laudantium ab illo unde deserunt voluptates dolore quia
+              consectetur et?
+            </div>
+          </div>
+          <div className="reviews-card">
+            <div className="review-img"></div>
+            <div className="review-name">Virat Dey</div>
+            <div className="review-para">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque cum
+              laudantium ab illo unde deserunt voluptates dolore quia
+              consectetur et?
+            </div>
+          </div>
+          <div className="reviews-card">
+            <div className="review-img"></div>
+            <div className="review-name">Virat Dey</div>
+            <div className="review-para">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque cum
+              laudantium ab illo unde deserunt voluptates dolore quia
+              consectetur et?
+            </div>
+          </div>
+          <div className="reviews-card">
+            <div className="review-img"></div>
+            <div className="review-name">Virat Dey</div>
+            <div className="review-para">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque cum
+              laudantium ab illo unde deserunt voluptates dolore quia
+              consectetur et?
+            </div>
+          </div>
+          <div className="reviews-card">
+            <div className="review-img"></div>
+            <div className="review-name">Rohit Das</div>
+            <div className="review-para">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque cum
+              laudantium ab illo unde deserunt voluptates dolore quia
+              consectetur et?
+            </div>
+          </div>
+          <div className="reviews-card">
+            <div className="review-img"></div>
+            <div className="review-name">Harish Pal</div>
+            <div className="review-para">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque cum
+              laudantium ab illo unde deserunt voluptates dolore quia
+              consectetur et?
+            </div>
+          </div>
+        </Carousel>
       </div>
     </div>
   );
