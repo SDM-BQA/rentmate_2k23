@@ -1,0 +1,141 @@
+.rentSecCon {
+  width: 100%;
+}
+
+.rentSecSearchCon {
+  position: relative;
+  height: 7rem;
+  width: 100%;
+  background-color: var(--secondary-clr);
+}
+
+.rentSearchBar {
+  padding: 1.5rem;
+  max-width: var(--max-width);
+  width: 99%;
+  background-color: #fff;
+  position: absolute;
+  left: 50%;
+  top: 90%;
+  border-radius: 0.5rem;
+  transform: translate(-50%, -50%);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.rentSearchbox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.rentSerachMain {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  flex: 1;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.rentSerachMain .heartSearchIco {
+  font-size: 23px;
+  color: var(--primary-clr);
+}
+.rentSerachMain input {
+  width: 100%;
+  font-size: 24px;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--blue-clr);
+}
+
+.rentSearchButton {
+  background-color: var(--blue-clr);
+  padding: 1rem 2rem;
+  background: rgb(37, 24, 126);
+  background: linear-gradient(
+    90deg,
+    rgba(37, 24, 126, 1) 14%,
+    rgba(12, 6, 52, 1) 100%
+  );
+  color: var(--white-clr);
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 0.5rem;
+}
+
+/* house list section */
+.houseListSectionInnerCon {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 5rem 0rem;
+}
+
+.rentSectionHeading {
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+.houseList {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+  justify-content: space-between;
+}
+
+/* MEdia Query */
+@media (max-width: 1441px) {
+  .houseListSectionInnerCon {
+    padding: 5rem 1rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .rentSearchBar {
+    padding: 1rem;
+  }
+  .rentSerachMain input {
+    font-size: 20px;
+  }
+  .rentSearchButton {
+    font-size: 18px;
+  }
+}
+
+/* For mobile view: 1 card per row with 100% width */
+@media (max-width: 767px) {
+  .houseList {
+    display: block;
+  }
+  .houseListSectionInnerCon {
+    padding: 5rem 1rem;
+  }
+}
+
+@media (max-width: 750px) {
+  .rentSerachMain input {
+    font-size: 18px;
+  }
+  .rentSearchButton {
+    font-size: 16px;
+  }
+}
+@media (max-width: 600px) {
+  .rentSearchButton {
+    padding: 1rem 1.5rem;
+  }
+  .rentSearchbox {
+    gap: 1rem;
+  }
+}
+@media (max-width: 500px) {
+  .rentSerachMain input {
+    font-size: 16px;
+  }
+  .rentSearchButton {
+    font-size: 15px;
+  }
+}

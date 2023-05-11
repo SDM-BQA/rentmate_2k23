@@ -1,0 +1,153 @@
+.rent_card_info {
+  max-width: var(--max-width);
+  width: 100%;
+  margin: 0 auto;
+}
+
+.gallery-map {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 1rem 0;
+}
+
+.gallery {
+  width: 60%;
+  height: 500px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.map {
+  width: 40%;
+  height: 500px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.map img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.mapHead {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* spec */
+.spec-seller-con {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 1rem 0;
+}
+.specSection {
+  width: 60%;
+  height: 300px;
+  background-color: var(--primary-clr);
+  color: var(--white-clr);
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
+}
+.sellerSection {
+  width: 40%;
+  height: 300px;
+  background-color: var(--secondary-clr);
+}
+.spec-row {
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-between;
+
+  column-gap: 0.5rem;
+  padding: 1rem;
+}
+.spec-col {
+  width: 33.3%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.spec-ico {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.spec-i {
+  color: yellow;
+  font-size: 1.5rem;
+}
+.spec-ico span {
+  color: #00febf;
+}
+/* seller */
+.sellerSection {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+@media (max-width: 1024px) {
+  .gallery-map {
+    flex-direction: column;
+  }
+  .spec-seller-con {
+    flex-direction: column;
+    /* margin-top: 2rem; */
+  }
+  .gallery,
+  .map {
+    width: 100%;
+    height: 400px;
+    /* margin-bottom: 1rem; */
+  }
+  .map {
+    margin-bottom: 2rem;
+  }
+  .specSection,
+  .sellerSection {
+    width: 100%;
+  }
+  .mapHead {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .gallery,
+  .map {
+    height: 300px;
+  }
+  .specSection {
+    height: auto;
+  }
+  /* .spec-row {
+    flex-direction: column;
+  } */
+  .spec-col {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 690px) {
+  /* .spec-row {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .spec-col {
+    flex-direction: row;
+    align-items: center;
+  } */
+}
+@media screen and (max-width: 480px) {
+  .gallery,
+  .map {
+    height: 200px;
+  }
+}

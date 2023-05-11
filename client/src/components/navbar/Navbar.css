@@ -1,0 +1,120 @@
+.navCon {
+  width: 100%;
+  background-color: var(--primary-clr);
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--nav-desk);
+  padding: 0 2rem;
+  max-width: 1440px;
+  margin: 0 auto;
+  color: var(--font-clr);
+}
+
+.navlogo {
+  height: var(--nav-desk);
+  object-fit: cover;
+}
+.navlogo img {
+  width: 100%;
+  height: 100%;
+}
+
+.navMenu li {
+  margin: 0 1rem;
+  text-decoration: none;
+  list-style: none;
+}
+.navMenu li:hover {
+  color: var(--white-clr);
+}
+
+.navbar .nav-btn {
+  padding: 5px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--textColor);
+  visibility: hidden;
+  display: none;
+  opacity: 0;
+  font-size: 1.8rem;
+}
+
+.navbar div,
+.navMenu {
+  display: flex;
+  align-items: center;
+}
+
+.auth {
+  font-weight: 600;
+  background-color: yellow;
+  padding: 10px;
+  color: blue;
+  border-radius: 10px;
+}
+.auth:hover {
+  background-color: blue;
+}
+
+.navUser{
+  display:flex;
+  align-items: center;
+  justify-content:space-between;
+  gap:10px;
+}
+
+.userPic{
+  width :30px;
+  height :30px;
+  border-radius :50%;
+  background-color:#fff;
+}
+
+.downIco{
+  color : #fff; 
+}
+
+@media only screen and (max-width: 1024px) {
+  .navbar .nav-btn {
+    visibility: visible;
+    display: block;
+    opacity: 1;
+  }
+
+  .navbar .navMenu {
+    position: fixed;
+    top: -100vh;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    transition: 1s;
+    background-color: #000;
+    color: #fff;
+    z-index: 1000;
+  }
+
+  .navbar .responsive_nav {
+    transform: translateY(100vh);
+  }
+
+  .navMenu .nav-close-btn {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    color: #fff;
+  }
+
+  .navMenu li {
+    font-size: var(--nav-tab-font);
+  }
+}
