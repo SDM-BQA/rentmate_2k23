@@ -136,7 +136,29 @@ const Rent_Card_info = () => {
         </div>
 
         {/* seller info */}
-        <div className="sellerSection"></div>
+        <div className="sellerSection">
+          <div className="sellerBasicDetails">
+            <div className="sellerImg"></div>
+            <div className="sellerDetails">
+              <div className="sellerName">Sundaram Dutta</div>
+              <div className="sellerVerify">Featured Seller</div>
+            </div>
+            <button className="sellerContactBtn">Contact Seller</button>
+          </div>
+          {/* additional */}
+          <hr />
+          <div className="sellerAddDetails">
+            <p className="addHead">Additional Details</p>
+            <span>
+              About: Nestaway is india's fastest growing 'home rental network
+              attemptMore
+            </span>
+            <span>
+              Address: No 1471,13th Cross road, HSR layout Sector -1 Ban,
+              Bangalore South
+            </span>
+          </div>
+        </div>
       </div>
 
       {/* review section */}

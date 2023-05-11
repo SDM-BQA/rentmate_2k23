@@ -141,7 +141,59 @@
 .sellerSection {
   display: flex;
   flex-direction: column;
-  padding: 1rem;
+  justify-content: center;
+  padding: 2rem 1rem;
+  color: var(--white-clr);
+  gap: 1rem;
+}
+.sellerBasicDetails {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.sellerImg {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: gray;
+}
+.sellerDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.sellerName {
+  font-size: 24px;
+}
+.sellerVerify {
+  font-weight: lighter;
+  color: black;
+  background-color: orange;
+  text-align: center;
+  padding: 3px;
+  font-weight: 400;
+}
+.sellerContactBtn {
+  width: max-content;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: 500;
+  background-color: yellowgreen;
+  border: 0;
+  outline: 0;
+  color: #000;
+  border-radius: 15px;
+  cursor: pointer;
+  align-self: flex-end;
+}
+.sellerAddDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.addHead {
+  font-weight: 600;
+  color: yellow;
 }
 
 /* Review Section */
