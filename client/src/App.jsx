@@ -1,7 +1,7 @@
 import "./App.css";
 import { UserContextProvider } from "./api/contextApi";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-// import Footer from "./components/Footer/Footer";
+import Footer from "./components/Footer/Footer";
 import Navbar from "./components/navbar/Navbar";
 // import Contact from "./components/contact/Contact";
 // import About from "./components/about/About";
@@ -25,8 +25,8 @@ function App() {
             <Route path="/rentSection/:id" element={<Rent_info_page />} />
           </Routes>
           {/* <About />
-          <Contact />
-          <Footer /> */}
+          <Contact />*/}
+          <Footer />
         </div>
       </BrowserRouter>
     </UserContextProvider>
