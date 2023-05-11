@@ -17,6 +17,26 @@ const Rent_Card_info = () => {
 
   return (
     <div className="rent_card_info" data-theme={theme}>
+      {/* Header Section */}
+      <div className="header-section">
+        {/* left */}
+        <div className="rent-rupee">
+          <div>
+            <span className="rupee">₹</span>
+            <p>56,000</p>
+          </div>
+          <div>per month</div>
+        </div>
+        {/*Right*/}
+        <div className="rent-spec">
+          <p className="bigPara">4BHK 4Baths</p>
+          <p className="midPara">Flat/Apartment for Rent</p>
+          <p className="smallPara">
+            in Ivory Woods Apartments, Gachibowli, Hyderabad, Hyderabad
+          </p>
+        </div>
+      </div>
+
       {/* gallery map section */}
       <div className="gallery-map">
         <div className="gallery">

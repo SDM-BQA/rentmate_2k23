@@ -20,7 +20,7 @@ const Navbar = () => {
     <div className="navCon" data-theme={theme}>
       <div className="navbar" id="nav">
         <div className="navlogo">
-          <img src="./l2.png" alt="Nav Logo" />
+          <img src="/l2.png" alt="Nav Logo" />
         </div>
         <ul ref={navRef} className="navMenu">
           <Link className="link" to="/" onClick={showNavbar}>
