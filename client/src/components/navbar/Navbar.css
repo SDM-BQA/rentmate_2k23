@@ -61,31 +61,76 @@
   background-color: blue;
 }
 
-.navUser{
-  display:flex;
+.navUser {
+  display: flex;
   align-items: center;
-  justify-content:space-between;
-  gap:10px;
+  justify-content: space-between;
+  gap: 10px;
+  position: relative;
+  cursor: pointer;
 }
 
-.userPic{
-  width :30px;
-  height :30px;
-  border-radius :50%;
-  background-color:#fff;
+.userPic {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #fff;
 }
 
-.downIco{
-  color : #fff; 
+.downIco {
+  color: #fff;
+  cursor: pointer;
+}
+
+.navRight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+#mobileUser {
+  display: none;
+}
+#deskUser {
+  margin-right: 15px;
+}
+.dropDownUserNav {
+  background-color: rgb(53, 49, 49);
+  padding: 10px;
+  border-radius: 10px;
+  border-top-right-radius: 0;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 38px;
+  width: 100%;
+  gap: 10px;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.dropDownUserNav p:hover {
+  color: var(--yellow-clr);
 }
 
 @media only screen and (max-width: 1024px) {
   .navbar .nav-btn {
     visibility: visible;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     opacity: 1;
   }
+  #deskUser {
+    display: none;
+  }
 
+  #mobileUser {
+    display: flex;
+    align-items: center;
+  }
   .navbar .navMenu {
     position: fixed;
     top: -100vh;

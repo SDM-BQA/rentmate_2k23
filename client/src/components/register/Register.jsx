@@ -264,7 +264,7 @@ const Register = () => {
             <input
               type="submit"
               className="login-button btn"
-              value="Login"
+              value="Register"
               id=""
             />
             <div className="form-lower">

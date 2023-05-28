@@ -8,7 +8,7 @@ import { Houses } from "./HouseList.js";
 const Rent_Section = () => {
   const { theme } = useContext(UserContext);
 
-  console.log(Houses.house1);
+  // console.log(Houses.house1);
   return (
     <div className="rentSecCon" data-theme={theme}>
       {/* Search Bar Portion */}

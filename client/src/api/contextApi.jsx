@@ -21,6 +21,11 @@ export const UserContextProvider = ({ children }) => {
     return password.length >= 8;
   };
 
+  // handle log out
+  const handleLogOut = () => {
+    setUser(false);
+  };
+
   const value = {
     theme,
     setTheme,
@@ -31,6 +36,7 @@ export const UserContextProvider = ({ children }) => {
     validateEmail,
     validatePassword,
     setUser,
+    handleLogOut,
   };
 
   return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
