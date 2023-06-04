@@ -148,14 +148,14 @@ const Register = () => {
     ) {
       setWarning(true);
     } else {
-      Axios.post("http://localhost:5174/api/checkEmail", {
+      Axios.post("/api/checkEmail", {
         userEmail: formDetails.emailAdd,
       })
         .then((response) => {
           console.log(response.data);
           setEmailExist(false);
           // Email does not exist, continue with registration
-          Axios.post("http://localhost:5174/api/insert", {
+          Axios.post("/api/insert", {
             userType: formDetails.userType,
             userName: formDetails.userName,
             userAge: formDetails.userAge,

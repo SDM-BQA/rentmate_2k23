@@ -61,7 +61,7 @@ const Login = () => {
     if (!isEmailValid || !isPasswordValid || email === "" || password === "") {
       setWarning(true);
     } else {
-      Axios.post("http://localhost:5174/api/login", { email, password })
+      Axios.post("/api/login", { email, password })
         .then((response) => {
           const userData = response.data;
           if (userData.message) {

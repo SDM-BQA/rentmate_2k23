@@ -2,8 +2,14 @@ import { useState } from "react";
 import "./Profile_page_com.css";
 import { SlArrowDown } from "react-icons/sl";
 import { SlArrowUp } from "react-icons/sl";
+import { AiOutlinePlus } from "react-icons/ai";
+import { useContext } from "react";
+import UserContext from "../../api/contextApi";
+import HomeForm from "../homeForm/HomeForm";
 
 const Profile_page_com = () => {
+  const { theme } = useContext(UserContext);
+
   // Accordian
   const [showDetails, setShowDetails] = useState(false);
 
@@ -35,6 +41,18 @@ const Profile_page_com = () => {
     },
   ];
 
+  // home add btn
+  const [showHomeFormBtn, setShowHomeFromBtn] = useState(true);
+
+  // home form
+  const [showHomeForm, setshowHomeForm] = useState(true);
+
+  // add a form to add home
+  const handleAddHomeFormBtn = () => {
+    setShowHomeFromBtn((prev) => !prev);
+    setshowHomeForm((prev) => !prev);
+  };
+
   const handleDetailsClick = (rowNumber) => {
     setShowDetails((prevState) => ({
       ...prevState,
@@ -43,7 +61,7 @@ const Profile_page_com = () => {
   };
 
   return (
-    <div className="profile-page-container">
+    <div className="profile-page-container" data-theme={theme}>
       {/* If User is a Owner */}
       <div className="houseListedCon">
         <h2>Your Listed Property</h2>
@@ -74,6 +92,20 @@ const Profile_page_com = () => {
             )}
           </div>
         ))}
+
+        {/* house row add icon */}
+        {showHomeFormBtn && (
+          <div className="houseAddBtn" onClick={handleAddHomeFormBtn}>
+            <span>Add New Home</span>
+            <AiOutlinePlus />
+          </div>
+        )}
+        {/* home form btn */}
+        {showHomeForm && (
+          <div className="homeForm">
+            <HomeForm />
+          </div>
+        )}
       </div>
 
       {/* Owner Info */}

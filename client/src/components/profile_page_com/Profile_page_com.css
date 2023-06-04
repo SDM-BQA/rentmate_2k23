@@ -72,6 +72,21 @@
 }
 .user-value {
 }
+.houseAddBtn {
+  background-color: var(--primary-clr);
+  width: max-content;
+  color: var(--white-clr);
+  padding: 1rem;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 20px;
+}
+.houseAddBtn:hover {
+  background-color: #141648;
+}
 
 /*  */
 @media (max-width: 1445px) {
@@ -88,5 +103,13 @@
 @media (max-width: 1170px) {
   .profile-page-container {
     flex-direction: column-reverse;
+  }
+  .houseAddBtn {
+    font-size: 18px;
+  }
+}
+@media (max-width: 600px) {
+  .houseAddBtn {
+    font-size: 16px;
   }
 }
