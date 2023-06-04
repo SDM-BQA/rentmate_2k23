@@ -89,6 +89,8 @@ app.post("/api/login", (req, res) => {
 
 
 
-app.listen(5174, () => {
-    console.log("Running on port 5174");
-})
+const port = process.env.PORT || 5173;
+
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
+});
