@@ -12,6 +12,7 @@ import Resgister_page from "./pages/Register_page/Resgister_page";
 import Rent_info_page from "./pages/Rent_Info_Page/Rent_info_page";
 import Profile_page from "./pages/Profile_page/Profile_page";
 import Contact_page from "./pages/Contact_page/Contact_page";
+import About_page from "./pages/About_page/About_page";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             <Route path="/rentSection/:id" element={<Rent_info_page />} />
             <Route path="/myProfile" element={<Profile_page />} />
             <Route path="/contact" element={<Contact_page />} />
+            <Route path="/about" element={<About_page />} />
           </Routes>
           {/* <About />
           <Contact />*/}
