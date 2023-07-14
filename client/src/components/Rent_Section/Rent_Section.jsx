@@ -1,14 +1,32 @@
 import Rent_Card from "../Rent_Card/Rent_Card";
 import "./Rent_Section.css";
 import { BsSearchHeart } from "react-icons/bs";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import UserContext from "../../api/contextApi";
-import { Houses } from "./HouseList.js";
+// import { Houses } from "./HouseList.js";
+import Axios from "axios";
 
 const Rent_Section = () => {
-  const { theme } = useContext(UserContext);
+  const { theme, setHouseList } = useContext(UserContext);
 
   // console.log(Houses.house1);
+  const [data, setData] = useState([]);
+
+  const fetchData = async () => {
+    try {
+      const response = await Axios.get("http://localhost:5174/api/houseList");
+      setData(response.data);
+      setHouseList(response.data);
+      console.log(response.data);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   return (
     <div className="rentSecCon" data-theme={theme}>
       {/* Search Bar Portion */}
@@ -30,7 +48,7 @@ const Rent_Section = () => {
           <div className="rentSectionHeading">Top Places To Watch</div>
           {/* house list */}
           <div className="houseList">
-            {Houses.map((house) => (
+            {data.map((house) => (
               <Rent_Card key={house.id} house={house} />
             ))}
           </div>

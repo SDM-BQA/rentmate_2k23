@@ -16,7 +16,6 @@ const db = mysql.createPool({
 });
 
 
-
 // inserting into database
 app.post("/api/insert", (req, res) => {
     const userType = req.body.userType;
@@ -87,10 +86,24 @@ app.post("/api/login", (req, res) => {
     });
 });
 
+// fetch all house details
+app.get("/api/houseList", (req, res) => {
+    const sqlSelect = "SELECT * FROM house_info";
+
+    db.query(sqlSelect, (err, result) => {
+        if (err) {
+            console.log(err);
+            res.status(500).send(err);
+        } else {
+            res.status(200).send(result);
+        }
+    });
+});
 
 
-const port = process.env.PORT || 5173;
 
-app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
+// const port = process.env.PORT || 5174;
+
+app.listen(5174, () => {
+    console.log(`Server is running on port 5174`);
 });

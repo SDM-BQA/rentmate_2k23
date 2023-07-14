@@ -120,4 +120,3 @@ export const Houses = [
         home_size: 900
     }
 ]
-

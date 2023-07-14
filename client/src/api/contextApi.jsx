@@ -6,6 +6,7 @@ export const UserContextProvider = ({ children }) => {
   const [theme, setTheme] = useState("dark");
   const [isHome, setIsHome] = useState(false);
   const [user, setUser] = useState(false);
+  const [houseList, setHouseList] = useState([]);
 
   const toggleTheme = () => {
     setTheme((curr) => (curr === "light" ? "dark" : "light"));
@@ -20,7 +21,6 @@ export const UserContextProvider = ({ children }) => {
   const validatePassword = (password) => {
     return password.length >= 8;
   };
-
   // handle log out
   const handleLogOut = () => {
     setUser(false);
@@ -37,6 +37,8 @@ export const UserContextProvider = ({ children }) => {
     validatePassword,
     setUser,
     handleLogOut,
+    setHouseList,
+    houseList,
   };
 
   return <UserContext.Provider value={value}>{children}</UserContext.Provider>;

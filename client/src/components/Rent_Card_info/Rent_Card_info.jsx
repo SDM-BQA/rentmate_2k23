@@ -5,9 +5,18 @@ import Carousel from "react-elastic-carousel";
 import { MdOutlineMapsHomeWork } from "react-icons/md";
 import { useContext } from "react";
 import UserContext from "../../api/contextApi";
+import { useParams } from "react-router-dom";
 
 const Rent_Card_info = () => {
-  const { theme } = useContext(UserContext);
+  const { theme, houseList } = useContext(UserContext);
+  const { id } = useParams();
+  const numericId = id.replace(":", "");
+  console.log(numericId);
+
+  // select the selected house
+  const selectedHouse = houseList.find((house) => {
+    return house.id == numericId;
+  });
 
   const breakPoints = [
     { width: 550, itemsToShow: 1 },
@@ -23,17 +32,17 @@ const Rent_Card_info = () => {
         <div className="rent-rupee">
           <div>
             <span className="rupee">₹</span>
-            <p>56,000</p>
+            <p>{selectedHouse.rent}</p>
           </div>
           <div>per month</div>
         </div>
         {/*Right*/}
         <div className="rent-spec">
-          <p className="bigPara">4BHK 4Baths</p>
-          <p className="midPara">Flat/Apartment for Rent</p>
-          <p className="smallPara">
-            in Ivory Woods Apartments, Gachibowli, Hyderabad, Hyderabad
+          <p className="bigPara">
+            {selectedHouse.bedroom}BHK {selectedHouse.bathroom}Baths
           </p>
+          <p className="midPara">Flat/Apartment for Rent</p>
+          <p className="smallPara">{selectedHouse.address}</p>
         </div>
       </div>
 
@@ -62,7 +71,8 @@ const Rent_Card_info = () => {
                 <span>Configuration</span>
               </div>
               <div className="spec-attribute">
-                4 Bedrooms , 5 Bathrooms, 2 Balconies
+                {selectedHouse.bedroom} Bedrooms , {selectedHouse.bathroom}{" "}
+                Bathrooms, {selectedHouse.balconies} Balconies
               </div>
             </div>
             <div className="spec-col">
@@ -70,14 +80,16 @@ const Rent_Card_info = () => {
                 <MdOutlineMapsHomeWork className="spec-i" />
                 <span>Area</span>
               </div>
-              <div className="spec-attribute">Built Up area: 37.91</div>
+              <div className="spec-attribute">
+                Built Up area: {selectedHouse.carpetArea}
+              </div>
             </div>
             <div className="spec-col">
               <div className="spec-ico">
                 <MdOutlineMapsHomeWork className="spec-i" />
                 <span>Furnishing</span>
               </div>
-              <div className="spec-attribute">Semifurnished</div>
+              <div className="spec-attribute">{selectedHouse.furnishing}</div>
             </div>
           </div>
 
@@ -86,25 +98,23 @@ const Rent_Card_info = () => {
             <div className="spec-col">
               <div className="spec-ico">
                 <MdOutlineMapsHomeWork className="spec-i" />
-                <span>Configuration</span>
+                <span>Rent</span>
               </div>
-              <div className="spec-attribute">
-                4 Bedrooms , 5 Bathrooms, 2 Balconies
-              </div>
+              <div className="spec-attribute">₹{selectedHouse.rent}</div>
             </div>
             <div className="spec-col">
               <div className="spec-ico">
                 <MdOutlineMapsHomeWork className="spec-i" />
-                <span>Area</span>
+                <span>Address</span>
               </div>
-              <div className="spec-attribute">Built Up area: 37.91</div>
+              <div className="spec-attribute">{selectedHouse.address}</div>
             </div>
             <div className="spec-col">
               <div className="spec-ico">
                 <MdOutlineMapsHomeWork className="spec-i" />
-                <span>Furnishing</span>
+                <span>Pet Friendly</span>
               </div>
-              <div className="spec-attribute">Semifurnished</div>
+              <div className="spec-attribute">{selectedHouse.PetFriendly}</div>
             </div>
           </div>
           {/* row-3 */}
@@ -112,25 +122,27 @@ const Rent_Card_info = () => {
             <div className="spec-col">
               <div className="spec-ico">
                 <MdOutlineMapsHomeWork className="spec-i" />
-                <span>Configuration</span>
+                <span>Wheel Chair Friendly</span>
               </div>
               <div className="spec-attribute">
-                4 Bedrooms , 5 Bathrooms, 2 Balconies
+                {selectedHouse.WheelChairFriendly}
               </div>
             </div>
             <div className="spec-col">
               <div className="spec-ico">
                 <MdOutlineMapsHomeWork className="spec-i" />
-                <span>Area</span>
+                <span>Electrtic Supply</span>
               </div>
-              <div className="spec-attribute">Built Up area: 37.91</div>
+              <div className="spec-attribute">
+                {selectedHouse.ElectricityWaterCharges}
+              </div>
             </div>
             <div className="spec-col">
               <div className="spec-ico">
                 <MdOutlineMapsHomeWork className="spec-i" />
-                <span>Furnishing</span>
+                <span>Available From</span>
               </div>
-              <div className="spec-attribute">Semifurnished</div>
+              <div className="spec-attribute">Immediate</div>
             </div>
           </div>
         </div>
@@ -140,7 +152,7 @@ const Rent_Card_info = () => {
           <div className="sellerBasicDetails">
             <div className="sellerImg"></div>
             <div className="sellerDetails">
-              <div className="sellerName">Sundaram Dutta</div>
+              <div className="sellerName">{selectedHouse.ownerName}</div>
               <div className="sellerVerify">Featured Seller</div>
             </div>
             <button className="sellerContactBtn">Contact Seller</button>
@@ -150,13 +162,11 @@ const Rent_Card_info = () => {
           <div className="sellerAddDetails">
             <p className="addHead">Additional Details</p>
             <span>
-              About: Nestaway is india's fastest growing 'home rental network
-              attemptMore
+              About: A home owner enjoys the benefits of stability, financial
+              investment, creative freedom, personalization, and the pride of
+              homeownership in creating a place they can call their own.
             </span>
-            <span>
-              Address: No 1471,13th Cross road, HSR layout Sector -1 Ban,
-              Bangalore South
-            </span>
+            <span>{selectedHouse.address}</span>
           </div>
         </div>
       </div>
@@ -169,63 +179,69 @@ const Rent_Card_info = () => {
             <div className="review-img"></div>
             <div className="review-name">Virat Dey</div>
             <div className="review-para">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque cum
-              laudantium ab illo unde deserunt voluptates dolore quia
-              consectetur et?
+              The house was a hidden gem, boasting modern amenities, stylish
+              decor, and breathtaking views. A true paradise for nature
+              enthusiasts and a peaceful escape from the hustle and bustle of
+              city life.
             </div>
           </div>
           <div className="reviews-card">
             <div className="review-img"></div>
-            <div className="review-name">Virat Dey</div>
+            <div className="review-name">Rahul Nair</div>
             <div className="review-para">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque cum
-              laudantium ab illo unde deserunt voluptates dolore quia
-              consectetur et?
+              We were impressed by the spaciousness and comfort of the house,
+              providing ample room for relaxation and quality time with loved
+              ones. The well-appointed kitchen and cozy bedrooms made our stay
+              delightful.
             </div>
           </div>
           <div className="reviews-card">
             <div className="review-img"></div>
-            <div className="review-name">Virat Dey</div>
+            <div className="review-name">Shiva Ray</div>
             <div className="review-para">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque cum
-              laudantium ab illo unde deserunt voluptates dolore quia
-              consectetur et?
+              From the moment we stepped inside, the house exuded warmth and
+              charm. The carefully curated furnishings and serene ambiance
+              created an inviting and cozy atmosphere, making us feel right at
+              home.
             </div>
           </div>
           <div className="reviews-card">
             <div className="review-img"></div>
-            <div className="review-name">Virat Dey</div>
+            <div className="review-name">satish Sharma</div>
             <div className="review-para">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque cum
-              laudantium ab illo unde deserunt voluptates dolore quia
-              consectetur et?
+              The house's location was perfect, offering both convenience and
+              serenity. We enjoyed easy access to local attractions while being
+              able to retreat to the peaceful oasis of the house after a day of
+              exploration.
             </div>
           </div>
           <div className="reviews-card">
             <div className="review-img"></div>
-            <div className="review-name">Virat Dey</div>
+            <div className="review-name">Rakesh Saha</div>
             <div className="review-para">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque cum
-              laudantium ab illo unde deserunt voluptates dolore quia
-              consectetur et?
+              The attention to detail in the house was remarkable. Every aspect,
+              from the well-manicured garden to the thoughtfully decorated
+              living spaces, contributed to a truly exceptional and memorable
+              stay.
             </div>
           </div>
           <div className="reviews-card">
             <div className="review-img"></div>
             <div className="review-name">Rohit Das</div>
             <div className="review-para">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque cum
-              laudantium ab illo unde deserunt voluptates dolore quia
-              consectetur et?
+              Our stay at the house was nothing short of exceptional. The
+              seamless blend of modern amenities and traditional touches
+              provided a unique and unforgettable experience.
             </div>
           </div>
           <div className="reviews-card">
             <div className="review-img"></div>
-            <div className="review-name">Harish Pal</div>
+            <div className="review-name">Harish Patel</div>
             <div className="review-para">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque cum
-              laudantium ab illo unde deserunt voluptates dolore quia
-              consectetur et?
+              Our stay at the house surpassed all expectations. The picturesque
+              surroundings, coupled with the comfortable and well-appointed
+              interiors, created an idyllic retreat.truly magical experience
+              that left us longing to return.
             </div>
           </div>
         </Carousel>

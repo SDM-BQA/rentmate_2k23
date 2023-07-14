@@ -2,7 +2,7 @@ import "./Rent_Card.css";
 import { TbGenderDemigirl, TbGenderDemiboy } from "react-icons/tb";
 import { MdOutlineVerifiedUser } from "react-icons/md";
 import { BiRupee } from "react-icons/bi";
-import roomImg from "/room1.jpg";
+
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
@@ -14,9 +14,9 @@ const Rent_Card = ({ house }) => {
           <Link className="link_card" to={`/rentSection/:${house.id}`}>
             {/* head */}
             <div className="cardHead">
-              <div className="ownerName">{house.owner_name}</div>
+              <div className="ownerName">{house.ownerName}</div>
               <div className="ownerInfo">
-                {house.gender === "female" ? (
+                {house.gender === "female" || house.gender === "Female" ? (
                   <TbGenderDemigirl className="gender" />
                 ) : (
                   <TbGenderDemiboy className="gender" />
@@ -28,7 +28,7 @@ const Rent_Card = ({ house }) => {
             </div>
             {/* img */}
             <div className="houseCardImg">
-              <img src={roomImg} alt="" />
+              <img src={`/house/room${house.id}.jpg`} alt="" />
             </div>
           </Link>
           {/* room info 1 */}
@@ -37,15 +37,15 @@ const Rent_Card = ({ house }) => {
             <span>Verified</span>
             <span>•</span>
             <span>
-              <span className="beds-no">2 </span>Beds
+              <span className="beds-no">{house.bedroom} </span>Beds
             </span>
             <span>•</span>
             <span>
-              <span className="house-area">{house.home_size}</span>sq ft.
+              <span className="house-area">{house.carpetArea}</span>sq ft.
             </span>
           </div>
           <div className="homeInfo2">
-            <span className="bhk_no">{house.bhk_no}</span> BHK,
+            <span className="bhk_no">{house.bhkNo}</span> BHK,
             <span>{house.address}</span>
           </div>
           <div className="rentInRupee">
@@ -53,7 +53,7 @@ const Rent_Card = ({ house }) => {
               <BiRupee />
               <span className="money">{house.rent}</span> / month
             </div>
-            <Link className="link_card" to="/rentSection/:12">
+            <Link className="link_card" to={`/rentSection/:${house.id}`}>
               <button>Checkout</button>
             </Link>
           </div>

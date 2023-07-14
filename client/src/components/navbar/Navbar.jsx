@@ -34,9 +34,11 @@ const Navbar = () => {
   return (
     <div className="navCon" data-theme={theme}>
       <div className="navbar" id="nav">
-        <div className="navlogo">
-          <img src="/l2.png" alt="Nav Logo" />
-        </div>
+        <Link to="/">
+          <div className="navlogo">
+            <img src="/l2.png" alt="Nav Logo" />
+          </div>
+        </Link>
         <ul ref={navRef} className="navMenu">
           <Link className="link" to="/" onClick={showNavbar}>
             <li>Home</li>
@@ -47,19 +49,14 @@ const Navbar = () => {
             </Link>
           )}
           {!isHome && (
-            <HashLink className="link" to="#about" smooth onClick={showNavbar}>
+            <Link className="link" to="/about" smooth onClick={showNavbar}>
               <li>About Us</li>
-            </HashLink>
+            </Link>
           )}{" "}
           {!isHome && (
-            <HashLink
-              className="link"
-              to="#contact"
-              smooth
-              onClick={showNavbar}
-            >
+            <Link className="link" to="/contact" smooth onClick={showNavbar}>
               <li>Contact Us</li>
-            </HashLink>
+            </Link>
           )}
           {!user && (
             <Link to="/login" className="link" onClick={showNavbar}>
