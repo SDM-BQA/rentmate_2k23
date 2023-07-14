@@ -8,7 +8,7 @@ import UserContext from "../../api/contextApi";
 import HomeForm from "../homeForm/HomeForm";
 
 const Profile_page_com = () => {
-  const { theme } = useContext(UserContext);
+  const { theme, user } = useContext(UserContext);
 
   // Accordian
   const [showDetails, setShowDetails] = useState(false);
@@ -110,19 +110,26 @@ const Profile_page_com = () => {
 
       {/* Owner Info */}
       <div className="userProfile">
-        <h2>User Profile</h2>
+        <h2>Your Profile</h2>
         <div className="userImg"></div>
         <div className="user-details">
-          <div className="user-key">Owner Name:</div>
-          <div className="user-value userName">John Smith</div>
+          <div className="user-key">Your Name:</div>
+          <div className="user-value userName">
+            {user.userName
+              .split(" ")
+              .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+              .join(" ")}
+          </div>
         </div>
         <div className="user-details">
-          <div className="user-key">Owner Age:</div>
-          <div className="user-value userAge">23</div>
+          <div className="user-key">Your Age:</div>
+          <div className="user-value userAge">{user.userAge}</div>
         </div>
         <div className="user-details">
-          <div className="user-key">User Type:</div>
-          <div className="user-value userName">Owner</div>
+          <div className="user-key">You are a :</div>
+          <div className="user-value userName">
+            {user.userType.charAt(0).toUpperCase() + user.userType.slice(1)}
+          </div>
         </div>
       </div>
     </div>

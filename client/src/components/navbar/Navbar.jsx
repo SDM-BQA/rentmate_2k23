@@ -4,7 +4,7 @@ import { AiFillCaretDown } from "react-icons/ai";
 import { FaBars, FaTimes } from "react-icons/fa";
 import ReactSwitch from "react-switch";
 import "./Navbar.css";
-import { HashLink } from "react-router-hash-link";
+// import { HashLink } from "react-router-hash-link";
 import { useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 

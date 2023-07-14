@@ -2,6 +2,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const mysql = require('mysql')
 const cors = require('cors')
+const bcrypt = require('bcryptjs');
 const app = express()
 
 app.use(cors());
@@ -17,19 +18,23 @@ const db = mysql.createPool({
 
 
 // inserting into database
-app.post("/api/insert", (req, res) => {
+app.post("/api/insert", async (req, res) => {
     const userType = req.body.userType;
     const userName = req.body.userName;
     const userAge = req.body.userAge;
     const userEmail = req.body.userEmail;
     const userPassword = req.body.userPassword;
 
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(userPassword, salt);
+
+
     const sqlInsert =
         "INSERT INTO user_info (userType,userName,userAge,userEmail,userPassword) VALUES (?,?,?,?,?)";
 
     db.query(
         sqlInsert,
-        [userType, userName, userAge, userEmail, userPassword],
+        [userType, userName, userAge, userEmail, hashedPassword],
         (err, result) => {
             if (err) {
                 console.log(err);
@@ -68,15 +73,16 @@ app.post("/api/login", (req, res) => {
 
     const sqlSelect = "SELECT * FROM user_info WHERE userEmail = ?";
 
-    db.query(sqlSelect, userEmail, (err, result) => {
+    db.query(sqlSelect, userEmail, async (err, result) => {
         if (err) {
             res.send({ err: err });
         }
 
         if (result.length > 0) {
-            if (result[0].userPassword === userPassword) {
-                res.send(result[0]);
+            const isPasswordMatch = await bcrypt.compare(userPassword, result[0].userPassword);
 
+            if (isPasswordMatch) {
+                res.send(result[0]);
             } else {
                 res.send({ message: "Wrong username/password combination!" });
             }
