@@ -126,7 +126,7 @@ const About = () => {
           </swiper-slide>
           <swiper-slide className="ss">
             <div className="image">
-              <img src="/prachi.jpeg" />
+              <img src="/mou.jpeg" />
             </div>
             <div className="details">
               <h3>Moulisa Nandi</h3>
@@ -138,17 +138,17 @@ const About = () => {
                 </a>
               </li>
               <li>
-                <a href="#" target="blank">
+                <a href="mailto: moulisanandi15@gmail.com" target="blank">
                   <ion-icon name="logo-facebook"></ion-icon>
                 </a>
               </li>
               <li>
-                <a href="#" target="blank">
+                <a href="https://instagram.com/moulisa15?igshid=OGQ5ZDc2ODk2ZA==" target="blank">
                   <ion-icon name="logo-instagram"></ion-icon>
                 </a>
               </li>
               <li>
-                <a href="#" target="blank">
+                <a href="https://www.facebook.com/profile.php?id=100019028182540&mibextid=ZbWKwL" target="blank">
                   <ion-icon name="logo-github"></ion-icon>
                 </a>
               </li>
