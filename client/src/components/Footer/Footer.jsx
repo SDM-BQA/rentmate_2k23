@@ -5,8 +5,11 @@ import { BsFacebook } from "react-icons/bs";
 import { BsTwitter } from "react-icons/bs";
 import { BsInstagram } from "react-icons/bs";
 import { BsYoutube } from "react-icons/bs";
+import { useContext } from "react";
+import UserContext from "../../api/contextApi";
 
 const Footer = () => {
+  const { user } = useContext(UserContext);
   return (
     <div className="footer-con">
       <div className="footer-inner-con">
@@ -16,13 +19,22 @@ const Footer = () => {
               <Link className="link footer-link" to="/">
                 <li>Home</li>
               </Link>
-              <Link className="link footer-link" to="/about">
+              <Link
+                className="link footer-link"
+                to={`/${user ? "about" : "login"}`}
+              >
                 <li>About us</li>
               </Link>
-              <Link className="link footer-link" to="/contact">
+              <Link
+                className="link footer-link"
+                to={`/${user ? "contact" : "login"}`}
+              >
                 <li>Contact us</li>
               </Link>
-              <Link className="link footer-link" to="/rentSection">
+              <Link
+                className="link footer-link"
+                to={`/${user ? "rentSection" : "login"}`}
+              >
                 <li>Rent a House</li>
               </Link>
             </ul>

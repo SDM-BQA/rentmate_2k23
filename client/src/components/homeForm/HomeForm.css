@@ -7,3 +7,74 @@
   font-weight: 600;
   margin-bottom: 15px;
 }
+
+.formdesign input {
+  font-size: 16px;
+  padding: 10px 20px;
+  border: 1px solid;
+  margin: 14px;
+  border-radius: 5px;
+}
+
+.formerror {
+  color: red;
+}
+
+#gender input {
+  width: auto;
+  padding: 0%;
+  border: 0cap;
+  margin: 10px;
+  border-radius: 0%;
+  font-size: 18px;
+}
+
+#furnishing input {
+  width: auto;
+  padding: 0%;
+  border: 0cap;
+  margin: 10px;
+  border-radius: 0%;
+}
+
+#wheel input {
+  width: auto;
+  padding: 0%;
+  border: 0cap;
+  margin: 10px;
+  border-radius: 0%;
+}
+
+#pet input {
+  width: auto;
+  padding: 0%;
+  border: 0cap;
+  margin: 10px;
+  border-radius: 0%;
+}
+
+#wifi input {
+  width: auto;
+  padding: 0%;
+  border: 0cap;
+  margin: 10px;
+  border-radius: 0%;
+}
+
+#lift input {
+  width: auto;
+  padding: 0%;
+  border: 0cap;
+  margin: 10px;
+  border-radius: 0%;
+}
+
+.formRow {
+  display: flex;
+  justify-content: space-between;
+
+  align-items: center;
+}
+.formCol {
+  width: 100%;
+}

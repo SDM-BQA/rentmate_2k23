@@ -64,7 +64,9 @@
   cursor: pointer;
   border-radius: 0.5rem;
 }
-
+.rentSecAddBtn {
+  margin-top: 20px;
+}
 /* house list section */
 .houseListSectionInnerCon {
   width: 100%;
@@ -84,6 +86,10 @@
   flex-wrap: wrap;
   margin: 2rem 0;
   justify-content: space-between;
+}
+.noProPara {
+  font-size: 2rem;
+  font-weight: 500;
 }
 
 /* MEdia Query */

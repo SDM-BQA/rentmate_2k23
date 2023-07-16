@@ -24,6 +24,19 @@ export const UserContextProvider = ({ children }) => {
   // handle log out
   const handleLogOut = () => {
     setUser(false);
+    localStorage.setItem("user", JSON.stringify(null));
+  };
+
+  // home add btn
+  const [showHomeFormBtn, setShowHomeFromBtn] = useState(true);
+
+  // home form
+  const [showHomeForm, setshowHomeForm] = useState(false);
+
+  // add a form to add home
+  const handleAddHomeFormBtn = () => {
+    setShowHomeFromBtn((prev) => !prev);
+    setshowHomeForm((prev) => !prev);
   };
 
   const value = {
@@ -39,6 +52,11 @@ export const UserContextProvider = ({ children }) => {
     handleLogOut,
     setHouseList,
     houseList,
+    showHomeFormBtn,
+    setShowHomeFromBtn,
+    showHomeForm,
+    setshowHomeForm,
+    handleAddHomeFormBtn,
   };
 
   return <UserContext.Provider value={value}>{children}</UserContext.Provider>;

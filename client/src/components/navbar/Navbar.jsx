@@ -28,8 +28,7 @@ const Navbar = () => {
     setNavUserDrop((prev) => !prev);
   };
 
-  const { theme, toggleTheme, isHome, user, handleLogOut } =
-    useContext(UserContext);
+  const { theme, toggleTheme, user, handleLogOut } = useContext(UserContext);
 
   return (
     <div className="navCon" data-theme={theme}>
@@ -43,17 +42,19 @@ const Navbar = () => {
           <Link className="link" to="/" onClick={showNavbar}>
             <li>Home</li>
           </Link>
-          {!isHome && (
+          {user && (
             <Link to="/rentSection" className="link" onClick={showNavbar}>
-              <li>Rent a Home</li>
+              <li>
+                {user.userType === "tenant" ? "Rent a Home" : "My Property"}
+              </li>
             </Link>
           )}
-          {!isHome && (
-            <Link className="link" to="/about" smooth onClick={showNavbar}>
+          {user && (
+            <Link className="link" to="/about" onClick={showNavbar}>
               <li>About Us</li>
             </Link>
           )}{" "}
-          {!isHome && (
+          {user && (
             <Link className="link" to="/contact" smooth onClick={showNavbar}>
               <li>Contact Us</li>
             </Link>

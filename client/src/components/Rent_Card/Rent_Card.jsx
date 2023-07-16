@@ -28,7 +28,10 @@ const Rent_Card = ({ house }) => {
             </div>
             {/* img */}
             <div className="houseCardImg">
-              <img src={`/house/room${house.id}.jpg`} alt="" />
+              <img
+                src={`/house/room${Math.floor(Math.random() * 10) + 1}.jpg`}
+                alt=""
+              />
             </div>
           </Link>
           {/* room info 1 */}

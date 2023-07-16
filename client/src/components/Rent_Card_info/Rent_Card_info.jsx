@@ -131,11 +131,9 @@ const Rent_Card_info = () => {
             <div className="spec-col">
               <div className="spec-ico">
                 <MdOutlineMapsHomeWork className="spec-i" />
-                <span>Electrtic Supply</span>
+                <span>Kitchen</span>
               </div>
-              <div className="spec-attribute">
-                {selectedHouse.ElectricityWaterCharges}
-              </div>
+              <div className="spec-attribute">{selectedHouse.kitchen}</div>
             </div>
             <div className="spec-col">
               <div className="spec-ico">
@@ -145,17 +143,46 @@ const Rent_Card_info = () => {
               <div className="spec-attribute">Immediate</div>
             </div>
           </div>
+          {/* row-4 */}
+          <div className="spec-row row3">
+            <div className="spec-col">
+              <div className="spec-ico">
+                <MdOutlineMapsHomeWork className="spec-i" />
+                <span>Wifi Available</span>
+              </div>
+              <div className="spec-attribute">{selectedHouse.wifi}</div>
+            </div>
+            <div className="spec-col">
+              <div className="spec-ico">
+                <MdOutlineMapsHomeWork className="spec-i" />
+                <span>Lifi Service</span>
+              </div>
+              <div className="spec-attribute">{selectedHouse.lift}</div>
+            </div>
+            <div className="spec-col">
+              <div className="spec-ico">
+                <MdOutlineMapsHomeWork className="spec-i" />
+                <span>Electrtic Supply</span>
+              </div>
+              <div className="spec-attribute">
+                {selectedHouse.ElectricityWaterCharges}
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* seller info */}
         <div className="sellerSection">
+          <p className="sellerHead">Seller Details</p>
           <div className="sellerBasicDetails">
             <div className="sellerImg"></div>
             <div className="sellerDetails">
               <div className="sellerName">{selectedHouse.ownerName}</div>
               <div className="sellerVerify">Featured Seller</div>
             </div>
-            <button className="sellerContactBtn">Contact Seller</button>
+            <a href={`mailto: sdmbqa420@gmail.com`}>
+              <button className="sellerContactBtn">Contact Seller</button>
+            </a>
           </div>
           {/* additional */}
           <hr />

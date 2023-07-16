@@ -99,7 +99,7 @@
 }
 .specSection {
   width: 60%;
-  height: 300px;
+  height: 350px;
   background-color: var(--primary-clr);
   color: var(--white-clr);
   /* display: flex;
@@ -150,6 +150,11 @@
   display: flex;
   align-items: center;
   gap: 1rem;
+}
+.sellerHead {
+  font-size: 20px;
+  text-align: center;
+  font-weight: 600;
 }
 .sellerImg {
   width: 70px;

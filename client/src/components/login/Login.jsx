@@ -69,6 +69,9 @@ const Login = () => {
           } else {
             setErrorMsg("");
             setUser(userData);
+
+            // Store user data in localStorage
+            localStorage.setItem("user", JSON.stringify(userData));
             navigate("/rentSection");
           }
         })
@@ -140,7 +143,7 @@ const Login = () => {
                 {errorMsg && <p>{errorMsg}</p>}
               </div>
               <div className="login-redirect">
-                doesn't have an account?{" "}
+                does not have an account?{" "}
                 <Link
                   to={"/register"}
                   className="link form-link"

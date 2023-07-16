@@ -2,15 +2,9 @@ import "./Home.css";
 import { useContext } from "react";
 import UserContext from "../../api/contextApi";
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
 
 const Home = () => {
-  const { theme, setIsHome, user } = useContext(UserContext);
-
-  useEffect(() => {
-    console.log("dd");
-    setIsHome(true);
-  }, []);
+  const { theme, user } = useContext(UserContext);
 
   return (
     <div className="home" data-theme={theme} id="home">

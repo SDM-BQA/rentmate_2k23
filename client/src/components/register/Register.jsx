@@ -198,7 +198,7 @@ const Register = () => {
               <select name="user_type" onChange={handleUserType} required>
                 <option value="">I am a</option>
                 <option value="tenant">Tentant</option>
-                <option value="tenant">Owner</option>
+                <option value="owner">Owner</option>
               </select>
               {!isValidUserType && <span>Select a Type</span>}
             </div>
@@ -258,7 +258,9 @@ const Register = () => {
                   />
                 )}
               </div>
-              {!isPasswordValid && <span>invalid Password Entered</span>}
+              {!isPasswordValid && (
+                <span>Password should 8 Charecter long</span>
+              )}
             </div>
 
             <input

@@ -18,7 +18,6 @@
 .hero-left {
   width: 40%;
   height: 100%;
-
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -60,6 +59,7 @@
 .hero-right img {
   width: 100%;
   height: 100%;
+  /* mix-blend-mode: overlay; */
 }
 
 @media (max-width: 1290px) {
