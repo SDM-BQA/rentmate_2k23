@@ -331,9 +331,9 @@ const HomeForm = () => {
             onChange={handleInputChange}
           />
         </div>
-        <input className="button" type="submit" value="submit" />
+        <input className="button sub-can" type="submit" value="submit" />
         <input
-          className="button"
+          className="button sub-can"
           type="reset"
           onClick={handleAddHomeFormBtn}
           value="Cancel"

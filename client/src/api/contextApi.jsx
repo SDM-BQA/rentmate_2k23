@@ -21,12 +21,6 @@ export const UserContextProvider = ({ children }) => {
   const validatePassword = (password) => {
     return password.length >= 8;
   };
-  // handle log out
-  const handleLogOut = () => {
-    setUser(false);
-    localStorage.setItem("user", JSON.stringify(null));
-  };
-
   // home add btn
   const [showHomeFormBtn, setShowHomeFromBtn] = useState(true);
 
@@ -49,7 +43,6 @@ export const UserContextProvider = ({ children }) => {
     validateEmail,
     validatePassword,
     setUser,
-    handleLogOut,
     setHouseList,
     houseList,
     showHomeFormBtn,

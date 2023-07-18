@@ -18,17 +18,16 @@ const Navbar = () => {
   };
 
   const [navUserDrop, setNavUserDrop] = useState(false);
+  const { theme, toggleTheme, user, setUser } = useContext(UserContext);
 
   const handleUserLogOut = () => {
-    handleLogOut();
-    navigate("/login");
+    navigate("/");
+    setUser(false);
   };
 
   const handleUserDropDown = () => {
     setNavUserDrop((prev) => !prev);
   };
-
-  const { theme, toggleTheme, user, handleLogOut } = useContext(UserContext);
 
   return (
     <div className="navCon" data-theme={theme}>
@@ -55,7 +54,7 @@ const Navbar = () => {
             </Link>
           )}{" "}
           {user && (
-            <Link className="link" to="/contact" smooth onClick={showNavbar}>
+            <Link className="link" to="/contact" onClick={showNavbar}>
               <li>Contact Us</li>
             </Link>
           )}
@@ -78,7 +77,7 @@ const Navbar = () => {
                   <Link className="link" to="/myProfile">
                     <p>My Profile</p>
                   </Link>
-                  <p onClick={handleLogOut}>Log Out</p>
+                  <p onClick={handleUserLogOut}>Log Out</p>
                 </div>
               )}
             </div>

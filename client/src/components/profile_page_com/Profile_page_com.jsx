@@ -33,61 +33,9 @@ const Profile_page_com = () => {
       });
   };
 
-  // useEffect(() => {
-  //   fetchHouseData();
-  // }, []);
-
-  // Function to handle SSE events and update house data
-  const handleSSEEvent = (event) => {
-    const newData = JSON.parse(event.data);
-    setHouseData((prevData) => [...prevData, newData]);
-  };
-
-  // Effect to fetch initial house data and set up SSE event listener
   useEffect(() => {
     fetchHouseData();
-
-    // Set up SSE event listener
-    const eventSource = new EventSource(
-      "http://localhost:5174/api/sse/houseData"
-    );
-    eventSource.onmessage = handleSSEEvent;
-
-    // Clean up on unmount
-    return () => {
-      eventSource.close();
-    };
   }, []);
-
-  // ------------------------------------------------//
-
-  // const rowList = [
-  //   {
-  //     id: 1,
-  //     content:
-  //       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque, nihil.",
-  //   },
-  //   {
-  //     id: 2,
-  //     content:
-  //       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque, nihil.",
-  //   },
-  //   {
-  //     id: 3,
-  //     content:
-  //       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque, nihil.",
-  //   },
-  //   {
-  //     id: 4,
-  //     content:
-  //       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque, nihil.",
-  //   },
-  //   {
-  //     id: 5,
-  //     content:
-  //       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque, nihil.",
-  //   },
-  // ];
 
   const handleDetailsClick = (rowNumber) => {
     setShowDetails((prevState) => ({

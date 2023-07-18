@@ -155,14 +155,14 @@ const Rent_Card_info = () => {
             <div className="spec-col">
               <div className="spec-ico">
                 <MdOutlineMapsHomeWork className="spec-i" />
-                <span>Lifi Service</span>
+                <span>Lift Service</span>
               </div>
               <div className="spec-attribute">{selectedHouse.lift}</div>
             </div>
             <div className="spec-col">
               <div className="spec-ico">
                 <MdOutlineMapsHomeWork className="spec-i" />
-                <span>Electrtic Supply</span>
+                <span>Electricity Charges</span>
               </div>
               <div className="spec-attribute">
                 {selectedHouse.ElectricityWaterCharges}

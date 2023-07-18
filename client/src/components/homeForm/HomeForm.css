@@ -78,3 +78,15 @@
 .formCol {
   width: 100%;
 }
+
+.sub-can {
+  padding: 10px 20px;
+  margin-right: 10px;
+  font-weight: 600;
+  background-color: blue;
+  color: yellow;
+  border: 0;
+  outline: 0;
+  border-radius: 10px;
+  cursor: pointer;
+}
